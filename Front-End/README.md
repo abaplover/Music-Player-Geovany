@@ -1,5 +1,9 @@
-Run:
+## Project setup
+```
+npm install
+```
 
-npm install.
-
-npm start.
+### Run
+```
+npm start
+```
