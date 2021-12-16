@@ -1,6 +1,13 @@
 module.exports = {
   HOST: "localhost",
-  PORT: 27017,
-  DB: "bezkoder_db",
-  URI: "mongodb+srv://musicgeo:YYujsju64h2Ecxxs@cluster0.9s22a.mongodb.net/MusicanGeovanyDB?retryWrites=true&w=majority"
+  USER: "informa3_music_player",
+  PASSWORD: "UB$4Xss{I+N+",
+  DB: "informa3_musicplayer",
+  dialect: "mysql",
+  pool: {
+    max: 5,
+    min: 0,
+    acquire: 30000,
+    idle: 10000
+  }
 };
