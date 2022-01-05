@@ -26,6 +26,9 @@ db.sequelize = sequelize;
 
 db.user = require("../models/user.model.js")(sequelize, Sequelize);
 db.role = require("../models/role.model.js")(sequelize, Sequelize);
+db.song = require("../models/song")(sequelize, Sequelize);
+db.playList = require("../models/playlist.model")(sequelize,Sequelize);
+db.playListSong = require("../models/PlaylistSong.model")(sequelize, Sequelize);
 
 db.role.belongsToMany(db.user, {
   through: "user_roles",
@@ -37,6 +40,21 @@ db.user.belongsToMany(db.role, {
   foreignKey: "userId",
   otherKey: "roleId"
 });
+
+
+// db.song.belongsToMany(db.playList, {
+//   through: "playlistSongs",
+//   foreignKey: "songId",
+//   otherKey: "playListId"
+// })
+
+
+// db.playList.belongsToMany(db.song, {
+//   through: "playlistSongs",
+//   foreignKey: "playListId",
+//   otherKey: "songId"
+// })
+
 
 db.ROLES = ["user", "admin", "moderator"];
 

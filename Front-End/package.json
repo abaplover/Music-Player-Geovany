@@ -17,7 +17,9 @@
     "react-scripts": "3.4.0",
     "react-transition-group": "^4.4.2",
     "react-validation": "^3.0.7",
-    "validator": "^12.2.0"
+    "validator": "^12.2.0",
+    "@fortawesome/fontawesome-svg-core": "^1.2.36",
+    "web-vitals": "^0.2.4"
   },
   "scripts": {
     "start": "react-scripts start",

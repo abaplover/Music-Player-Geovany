@@ -13,7 +13,7 @@ import Profile from "./components/profile.component";
 import BoardUser from "./components/board-user.component";
 import BoardModerator from "./components/board-moderator.component";
 import BoardAdmin from "./components/board-admin.component";
-import Player from "./containers/Player/Player";
+import Player from "./components/music-player"
 
 // import AuthVerify from "./common/auth-verify";
 import EventBus from "./common/EventBus";
