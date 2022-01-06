@@ -1,6 +1,6 @@
 module.exports = (sequelize, Sequelize) => {
     const Song = sequelize.define("songs", {
-      Name: {
+      Title: {
         type: Sequelize.STRING
       },
       Genre: {
@@ -15,7 +15,7 @@ module.exports = (sequelize, Sequelize) => {
       ReleaseDate: {
         type: Sequelize.DATEONLY
       },
-      FileLocation: {
+      Src: {
         type: Sequelize.STRING
       },
       IsYoutube: {

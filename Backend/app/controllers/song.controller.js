@@ -8,19 +8,19 @@ var bcrypt = require("bcryptjs");
 const req = require("express/lib/request");
 
 exports.createSong = (req, res) => {
-    if(!req.body.Name){
+    if(!req.body.Title){
         res.status(400).send({
             message: "Content can't be empty"
         });
     }
 
     Song.create({
-        Name: req.body.Name,
+        Title: req.body.Title,
         Genre: req.body.Genre,
         Artist: req.body.Artist,
         Duration: req.body.Duration,
         ReleaseDate: req.body.ReleaseDate,
-        FileLocation: req.body.FileLocation,
+        Src: req.body.Src,
         IsYoutube: req.body.IsYoutube,
         YoutubeUrl: req.body.YoutubeUrl,
         isBlocked: req.body.isBlocked,
