@@ -17,6 +17,7 @@ import Player from "./components/music-player"
 
 // import AuthVerify from "./common/auth-verify";
 import EventBus from "./common/EventBus";
+import FileUploadPage from "./components/uploader/FileUploadPage";
 
 class App extends Component {
   constructor(props) {
@@ -68,6 +69,9 @@ class App extends Component {
         <nav className="navbar navbar-expand navbar-dark bg-dark">
           <Link to={"/Player"} className="navbar-brand">
             Music Player 
+          </Link>
+          <Link to={"/FileUploadPage"} className="navbar-brand">
+            Subir Canción
           </Link>
           <div className="navbar-nav mr-auto">
             <li className="nav-item">
@@ -135,6 +139,7 @@ class App extends Component {
           <Switch>
             <Route exact path={["/", "/home"]} component={Home} />
             <Route exact path="/Player" component={Player} />
+            <Route exact path="/FileUploadPage" component={FileUploadPage} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/register" component={Register} />
             <Route exact path="/profile" component={Profile} />
