@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://mcqueeninc.net/api/auth/";
+const API_URL = "https://mcqueeninc.net/api/auth/";
 
 class AuthService {
   login(username, password) {

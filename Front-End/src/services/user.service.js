@@ -1,7 +1,7 @@
 import axios from 'axios';
 import authHeader from './auth-header';
 
-const API_URL = 'http://mcqueeninc.net/api/test/';
+const API_URL = 'https://mcqueeninc.net/api/test/';
 
 class UserService {
   getPublicContent() {

@@ -3,10 +3,6 @@ const config = require("../config/auth.config");
 
 const Song = db.song;
 
-var jwt = require("jsonwebtoken");
-var bcrypt = require("bcryptjs");
-const req = require("express/lib/request");
-
 exports.createSong = (req, res) => {
     if(!req.body.Title){
         res.status(400).send({
@@ -14,17 +10,18 @@ exports.createSong = (req, res) => {
         });
     }
 
+    var fullUrl = req.protocol + '://';
     Song.create({
         Title: req.body.Title,
         Genre: req.body.Genre,
         Artist: req.body.Artist,
         Duration: req.body.Duration,
         ReleaseDate: req.body.ReleaseDate,
-        Src: req.body.Src,
+        Src: fullUrl + req.files['Src'][0].path,
         IsYoutube: req.body.IsYoutube,
         YoutubeUrl: req.body.YoutubeUrl,
         isBlocked: req.body.isBlocked,
-        SongImg: req.body.SongImg
+        SongImg: fullUrl + req.files['SongImg'][0].path,
     }).then(data => {
         res.send("Song created successfully!");
     })
@@ -111,3 +108,4 @@ exports.getAllSongs = (req, res) => {
             });
         } )
     }
+
