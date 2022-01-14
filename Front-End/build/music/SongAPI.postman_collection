@@ -1,0 +1,84 @@
+{
+	"info": {
+		"_postman_id": "f64a9a78-7ea1-4d48-9b5b-1115b176f65a",
+		"name": "New Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "https://mcqueeninc.net/api/song",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "Developers123$",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "DevUser",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "Title",
+							"value": "Angel MMG",
+							"type": "default"
+						},
+						{
+							"key": "Genre",
+							"value": "Prueba",
+							"type": "default"
+						},
+						{
+							"key": "Artist",
+							"value": "Moyita",
+							"type": "default"
+						},
+						{
+							"key": "Duration",
+							"value": "300",
+							"type": "default"
+						},
+						{
+							"key": "Src",
+							"type": "file",
+							"src": "/C:/Repos/Music-Player-Geovany/Front-End/public/music/on-n-on.mp3"
+						},
+						{
+							"key": "SongImg",
+							"type": "file",
+							"src": "/C:/Users/rolan/OneDrive/Escritorio/-11591925787cggjhepdvq.png"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://mcqueeninc.net/api/song",
+					"protocol": "https",
+					"host": [
+						"mcqueeninc",
+						"net"
+					],
+					"path": [
+						"api",
+						"song"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

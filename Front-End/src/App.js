@@ -17,6 +17,9 @@ import Player from "./components/music-player"
 import SongList from "./components/Songs/ListSongs"
 import UpdateSong from "./components/Songs/Update"
 import Details from "./components/Songs/Details"
+import CreatePlaylist from "./components/Playlist/createPlaylist"
+import ListPlaylist from "./components/Playlist/List"
+import UpdatePlaylist from "./components/Playlist/Update"
 
 // import AuthVerify from "./common/auth-verify";
 import EventBus from "./common/EventBus";
@@ -83,7 +86,11 @@ class App extends Component {
               <Link to={"/songs"} className="nav-link">
                 Canciones
               </Link>
-            </li>
+            </li><li className="nav-item">
+              <Link to={"/listPlaylist"} className="nav-link">
+                Lista de Reproducción
+              </Link>
+            </li>            
 
             {showModeratorBoard && (
               <li className="nav-item">
@@ -148,6 +155,9 @@ class App extends Component {
             <Route exact path="/update" component={UpdateSong} />
             <Route exact path="/details" component={Details} />
             <Route exact path="/createSong" component={FileUploadPage} />
+            <Route exact path="/createPlaylist" component={CreatePlaylist} />
+            <Route exact path="/updatePlaylist" component={UpdatePlaylist} />
+            <Route exact path="/listPlaylist" component={ListPlaylist} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/register" component={Register} />
             <Route exact path="/profile" component={Profile} />
