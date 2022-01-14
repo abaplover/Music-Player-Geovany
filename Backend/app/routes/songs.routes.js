@@ -13,7 +13,6 @@ const storage = multer.diskStorage({
 
 const storageMp3 = multer({ storage: storage });
 
-
 module.exports = function (app) {
   app.use(function (req, res, next) {
     res.header(
@@ -29,7 +28,7 @@ module.exports = function (app) {
 
   router.get("/:id", controller.getSong);
 
-  router.post("/", storageMp3.fields([{
+  router.post("/",storageMp3.fields([{
     name: 'Src', maxCount: 1
   },
   {

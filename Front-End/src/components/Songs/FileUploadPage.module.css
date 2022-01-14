@@ -55,3 +55,8 @@
     background-color: #a50e48;
     border-color: #a50e48;
   }
+  .datePicker label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }

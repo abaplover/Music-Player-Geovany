@@ -6,7 +6,7 @@ import "./App.css";
 
 import AuthService from "./services/auth.service";
 
-import Login from "./components/login.component";
+import Login from "./components/Login/login.component";
 import Register from "./components/register.component";
 import Home from "./components/home.component";
 import Profile from "./components/profile.component";
@@ -14,10 +14,13 @@ import BoardUser from "./components/board-user.component";
 import BoardModerator from "./components/board-moderator.component";
 import BoardAdmin from "./components/board-admin.component";
 import Player from "./components/music-player"
+import SongList from "./components/Songs/ListSongs"
+import UpdateSong from "./components/Songs/Update"
+import Details from "./components/Songs/Details"
 
 // import AuthVerify from "./common/auth-verify";
 import EventBus from "./common/EventBus";
-import FileUploadPage from "./components/uploader/FileUploadPage";
+import FileUploadPage from "./components/Songs/FileUploadPage";
 
 class App extends Component {
   constructor(props) {
@@ -70,13 +73,15 @@ class App extends Component {
           <Link to={"/Player"} className="navbar-brand">
             Music Player 
           </Link>
-          <Link to={"/FileUploadPage"} className="navbar-brand">
-            Subir Canción
-          </Link>
           <div className="navbar-nav mr-auto">
             <li className="nav-item">
               <Link to={"/home"} className="nav-link">
                 Home
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link to={"/songs"} className="nav-link">
+                Canciones
               </Link>
             </li>
 
@@ -139,7 +144,10 @@ class App extends Component {
           <Switch>
             <Route exact path={["/", "/home"]} component={Home} />
             <Route exact path="/Player" component={Player} />
-            <Route exact path="/FileUploadPage" component={FileUploadPage} />
+            <Route exact path="/songs" component={SongList} />
+            <Route exact path="/update" component={UpdateSong} />
+            <Route exact path="/details" component={Details} />
+            <Route exact path="/createSong" component={FileUploadPage} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/register" component={Register} />
             <Route exact path="/profile" component={Profile} />
