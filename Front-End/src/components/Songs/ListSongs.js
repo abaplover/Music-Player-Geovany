@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react'
-import { Table } from 'semantic-ui-react';
+import { Table, Button } from 'semantic-ui-react';
 import {Link} from 'react-router-dom'
 import axios from 'axios';
 
@@ -47,9 +47,9 @@ useEffect(() => {
         <div>
             <div>
                 <Link to={'/createSong'}>
-                    <button>
-                        Crear canción
-                    </button>
+                    <Button primary>
+                        Subir canción
+                    </Button>
                 </Link>
             </div>
             <div>
@@ -82,17 +82,17 @@ useEffect(() => {
                             <Table.Cell>{data.isBlocked ? 'Yes' : 'No'} </Table.Cell>
                             <Table.Cell> 
                                 <Link to='/details'>
-                                <button onClick={() => setData(data)}>Detalle</button>
+                                <Button positive onClick={() => setData(data)}>Detalle</Button>
                                 </Link>
                             </Table.Cell>
 
                             <Table.Cell> 
                                 <Link to='/update'>
-                                <button onClick={() => setData(data)}>Update</button>
+                                <Button positive onClick={() => setData(data)}>Update</Button>
                                 </Link>
                             </Table.Cell>
                             
-                            <Table.Cell><button onClick={() => onDelete(data.id)}>Delete</button></Table.Cell>
+                            <Table.Cell><Button negative onClick={() => onDelete(data.id)}>Delete</Button></Table.Cell>
                             </Table.Row>
                             
                         )

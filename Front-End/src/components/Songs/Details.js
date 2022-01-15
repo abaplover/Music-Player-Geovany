@@ -3,7 +3,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import classes from './FileUploadPage.module.css';
 import Card from '../UI/Card';
 import { Link } from "react-router-dom";
-import { Checkbox } from 'semantic-ui-react';
+import { Checkbox, Button } from 'semantic-ui-react';
 import DatePicker from 'react-date-picker'
 
 export default function Update() {
@@ -17,22 +17,21 @@ export default function Update() {
   const [UrlMp3, setMp3] = useState('');
   const [Blocked, setBlocked] = useState(false);
   const [ReleaseDate, setDate] = useState(new Date());
-  
+
 
   useEffect(() => {
     setID(localStorage.getItem('ID'))
     setTitle(localStorage.getItem('Title'));
     setArtist(localStorage.getItem('Artist'));
-    setDuration(localStorage.getItem('Duration'))
-     setDate(new Date(localStorage.getItem('ReleaseDate').split("-").reverse().join("-")))
-    // setDate(new Date('2022-01-01'))
+    setDuration(localStorage.getItem('Duration'));
+    setDate(new Date(localStorage.getItem('ReleaseDate').split("-").join(",")))
 
     setGenre(localStorage.getItem('Genre'))
     setBlocked(localStorage.getItem('isBlocked'))
     setMp3(localStorage.getItem('Src'))
     setImg(localStorage.getItem('SongImg'))
-    
-}, []);
+
+  }, []);
 
   return (
     <Card>
@@ -45,7 +44,7 @@ export default function Update() {
 
           <div className={classes.control}>
             <label htmlFor='Genre'>Genre</label>
-            <input type='text' value={Genre} readOnly/>
+            <input type='text' value={Genre} readOnly />
           </div>
 
           <div className={classes.control}>
@@ -60,7 +59,7 @@ export default function Update() {
             <label htmlFor='ReleaseDate'>Fecha de estreno</label>
             {/* <input type='number' ref={durationInputRef} /> */}
             <DatePicker
-            value={ReleaseDate}
+              value={ReleaseDate}
             >
 
             </DatePicker>
@@ -70,8 +69,8 @@ export default function Update() {
             <input type='text' readOnly />
           </div>
           <div className={classes.checkbox}>
-          <Checkbox label='Esta bloqueada para usuarios?' 
-          checked={Blocked ? true : false} readOnly></Checkbox>
+            <Checkbox label='Esta bloqueada para usuarios?'
+              checked={Blocked ? true : false} readOnly></Checkbox>
           </div>
           <div className={classes.control}>
             <label htmlFor='Image'>Imagen de la canción</label>
@@ -84,11 +83,12 @@ export default function Update() {
         </form>
 
         <div>
-            <Link to={'/songs'}>
-            <button className={classes.actions}>Volver</button>
-            </Link>
-            
+          <Link to={'/songs'}>
+            <Button>Volver</Button>
+          </Link>
+
         </div>
+        <br></br>
       </div>
     </Card>
   )

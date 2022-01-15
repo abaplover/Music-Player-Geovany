@@ -3,7 +3,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import classes from './FileUploadPage.module.css';
 import Card from '../UI/Card';
 import { useHistory } from "react-router-dom";
-import { Checkbox } from 'semantic-ui-react';
+import { Checkbox, Button } from 'semantic-ui-react';
 
 export default function Update() {
 
@@ -109,7 +109,7 @@ export default function Update() {
           </div>
           <div className={classes.actions}>
            
-            <button>Update Song</button>            
+            <Button positive>Update Song</Button>            
             
           </div>
         </form>
